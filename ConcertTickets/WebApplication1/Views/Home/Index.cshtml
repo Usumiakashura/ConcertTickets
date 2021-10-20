@@ -2,10 +2,36 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div>
+
+<div @*style="padding-top: 10px"*@>
     <h1>Главная страница</h1>
 
-
+    <div >
+        <form id="email-form" name="email-form" data-name="Email Form" class="form">
+            <div class="row">
+                <input class="col-md-10" style="margin: 15px 15px" placeholder="Поиск концерта по названию, исполнителю..." >
+                @*<p></p>*@
+                <div class="col-md-10">
+                    <select id="type_concert" name="type_concert">
+                        <option value="0">Тип концерта...</option>
+                        <option value="1">Классическая музыка</option>
+                        <option value="2">Вечеринка</option>
+                        <option value="3">Опэн Эйр</option>
+                    </select>
+                    <select id="sort_concert" name="sort_concert">
+                        <option value="0">Сортировать по...</option>
+                        <option value="1">Дата (по возрастанию)</option>
+                        <option value="2">Дата (по убыванию)</option>
+                        <option value="3">Исполнитель (по возрастанию)</option>
+                        <option value="4">Исполнитель (по убыванию)</option>
+                    </select>
+                </div>
+            </div>
+            @*<p></p>*@
+            <input style="margin-top: 10px" type="submit" value="Поиск" data-wait="Please wait..." class="submit-button w-button">
+        </form>
+        <a href="#" class="link">Поиск мероприятий на карте...</a>
+    </div>
 
 
 </div>
