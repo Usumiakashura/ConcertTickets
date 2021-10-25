@@ -90,3 +90,10 @@ D:\ConcertTickets\ConcertTickets\WebApplication1\obj\Debug\netcoreapp3.1\WebAppl
 D:\ConcertTickets\ConcertTickets\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.dll
 D:\ConcertTickets\ConcertTickets\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.pdb
 D:\ConcertTickets\ConcertTickets\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.genruntimeconfig.cache
+D:\ConcertTickets\ConcertTickets\WebApplication1\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
+D:\ConcertTickets\ConcertTickets\WebApplication1\bin\Debug\netcoreapp3.1\EntityFramework.dll
+D:\ConcertTickets\ConcertTickets\WebApplication1\bin\Debug\netcoreapp3.1\System.CodeDom.dll
+D:\ConcertTickets\ConcertTickets\WebApplication1\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\ConcertTickets\ConcertTickets\WebApplication1\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\ConcertTickets\ConcertTickets\WebApplication1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\ConcertTickets\ConcertTickets\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Menu\Default.cshtml.g.cs
