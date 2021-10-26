@@ -212,8 +212,8 @@ namespace DataLayer.Migrations
                 {
                     b.HasBaseType("DataLayer.Entityes.InfoAboutTypeConcert");
 
-                    b.Property<string>("Age")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<long>("Age")
+                        .HasColumnType("bigint");
 
                     b.HasDiscriminator().HasValue("Party");
                 });
@@ -221,13 +221,13 @@ namespace DataLayer.Migrations
             modelBuilder.Entity("DataLayer.Entityes.BuyTicket", b =>
                 {
                     b.HasOne("DataLayer.Entityes.Ticket", "Ticket")
-                        .WithMany()
+                        .WithMany("BuyTickets")
                         .HasForeignKey("TicketId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DataLayer.Entityes.User", "User")
-                        .WithMany()
+                        .WithMany("BuyTickets")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -257,13 +257,13 @@ namespace DataLayer.Migrations
             modelBuilder.Entity("DataLayer.Entityes.ReservedTicket", b =>
                 {
                     b.HasOne("DataLayer.Entityes.Ticket", "Ticket")
-                        .WithMany()
+                        .WithMany("ReservedTickets")
                         .HasForeignKey("TicketId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DataLayer.Entityes.User", "User")
-                        .WithMany()
+                        .WithMany("ReservedTickets")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -301,6 +301,20 @@ namespace DataLayer.Migrations
             modelBuilder.Entity("DataLayer.Entityes.ConcertType", b =>
                 {
                     b.Navigation("InfoAboutTypesConcerts");
+                });
+
+            modelBuilder.Entity("DataLayer.Entityes.Ticket", b =>
+                {
+                    b.Navigation("BuyTickets");
+
+                    b.Navigation("ReservedTickets");
+                });
+
+            modelBuilder.Entity("DataLayer.Entityes.User", b =>
+                {
+                    b.Navigation("BuyTickets");
+
+                    b.Navigation("ReservedTickets");
                 });
 
             modelBuilder.Entity("DataLayer.Entityes.VoiceType", b =>

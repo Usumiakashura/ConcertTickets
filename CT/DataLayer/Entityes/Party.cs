@@ -8,7 +8,7 @@ namespace DataLayer.Entityes
     //[Table("Party")]
     public class Party : InfoAboutTypeConcert
     {
-        public string Age { get; set; }
+        public uint Age { get; set; }
 
     }
 }

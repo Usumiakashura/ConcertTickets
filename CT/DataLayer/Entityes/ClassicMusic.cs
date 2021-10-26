@@ -10,6 +10,7 @@ namespace DataLayer.Entityes
     {
         public string NameConcert { get; set; }
         public string Composer { get; set; }
+        public int? VoiceTypeId { get; set; }
         public VoiceType VoiceType { get; set; }
 
     }
