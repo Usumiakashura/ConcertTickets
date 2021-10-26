@@ -14,6 +14,7 @@ namespace DataLayer.Entityes
         //public ConcertType ConcertType { get; set; }
 
         public InfoAboutTypeConcert InfoATC { get; set; }
+        public List<Ticket> Tickets { get; set; }
 
     }
 }

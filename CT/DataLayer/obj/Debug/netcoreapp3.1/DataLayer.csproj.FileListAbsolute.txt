@@ -9,4 +9,3 @@ D:\ConcertTickets\CT\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csproj.CoreComp
 D:\ConcertTickets\CT\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.dll
 D:\ConcertTickets\CT\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.pdb
 D:\ConcertTickets\CT\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.genruntimeconfig.cache
-D:\ConcertTickets\CT\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csproj.AssemblyReference.cache
