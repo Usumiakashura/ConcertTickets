@@ -1,0 +1,12 @@
+D:\ConcertTickets\CT\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.deps.json
+D:\ConcertTickets\CT\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.runtimeconfig.json
+D:\ConcertTickets\CT\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.runtimeconfig.dev.json
+D:\ConcertTickets\CT\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.dll
+D:\ConcertTickets\CT\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.pdb
+D:\ConcertTickets\CT\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.AssemblyInfoInputs.cache
+D:\ConcertTickets\CT\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.AssemblyInfo.cs
+D:\ConcertTickets\CT\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csproj.CoreCompileInputs.cache
+D:\ConcertTickets\CT\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.dll
+D:\ConcertTickets\CT\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.pdb
+D:\ConcertTickets\CT\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.genruntimeconfig.cache
+D:\ConcertTickets\CT\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csproj.AssemblyReference.cache
