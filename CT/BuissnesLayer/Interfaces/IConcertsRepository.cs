@@ -7,10 +7,10 @@ namespace BuissnesLayer.Interfaces
 {
     public interface IConcertsRepository
     {
-        IEnumerable<Concert> GetAllConcerts(/*bool includeTypeConcert = false*/);
-        Concert GetConcertById(int concertId/*, bool includeTypeConcert = false*/);
-        void SaveConcert(Concert concert);
-        void DeleteConcert(Concert concert);
+        public IEnumerable<Concert> GetAllConcerts(/*bool includeTypeConcert = false*/);
+        public Concert GetConcertById(int concertId/*, bool includeTypeConcert = false*/);
+        public void SaveConcert(Concert concert);
+        public void DeleteConcert(Concert concert);
 
     }
 }

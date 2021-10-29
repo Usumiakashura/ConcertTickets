@@ -8,7 +8,7 @@ using System.Text;
 
 namespace BuissnesLayer.Implementations
 {
-    class EFConcertsRepository : IConcertsRepository
+    public class EFConcertsRepository : IConcertsRepository
     {
         private EFDBContext context;
 
@@ -19,12 +19,12 @@ namespace BuissnesLayer.Implementations
 
         public IEnumerable<Concert> GetAllConcerts()
         {
-            return context.Concerts.ToList();
+            return context.Concerts;
         }
 
         public Concert GetConcertById(int concertId)
         {
-            return context.Concerts.FirstOrDefault(x => x.Id == concertId);
+            return context.Concerts.ElementAtOrDefault(concertId);
         }
         public void DeleteConcert(Concert concert)
         {

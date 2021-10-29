@@ -1,3 +1,6 @@
+using BuissnesLayer;
+using BuissnesLayer.Implementations;
+using BuissnesLayer.Interfaces;
 using DataLayer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,8 +30,10 @@ namespace CT
         {
             var connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<EFDBContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("DataLayer")));
-            
-            
+
+            services.AddTransient<IConcertsRepository, EFConcertsRepository>();
+
+            services.AddScoped<DataManager>();
             
             services.AddControllersWithViews();
         }
