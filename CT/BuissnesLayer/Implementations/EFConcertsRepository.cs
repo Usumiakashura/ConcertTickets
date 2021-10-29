@@ -28,16 +28,48 @@ namespace BuissnesLayer.Implementations
         }
         public void DeleteConcert(Concert concert)
         {
-            //решить вопрос с бронированными билетами
+            //----- 1. Дублируем информацию о билетах концерта в специальные таблицы -----
+            
+            foreach (var ticket in concert.Tickets) // цикл по списку всех билетов концерта
+            {
+                context.DeletedTickets.Add(new DeletedTicket() // дублирование информации в таблицу DeletedTicket
+                {
+                    DelTicketId = ticket.TicketID,
+                    SingerDeletedConcert = concert.Singer,
+                    DateConcert = concert.DateConcert,
+                    Image = concert.Image,
+                    Price = ticket.Price,
+                    Sector = ticket.Sector
+                });
 
-            //решить вопрос с купленными билетами
+                // цикл, который проходится по списку информации, которая относится именно к текущему билету
+                foreach (var it in ticket.InfoAboutTickets.Where(i => i.TicketId == ticket.TicketID))
+                { 
+                    // объект для дублирования данных об удаляемых билетах
+                    InfoAboutDeleteTicket iadt = new InfoAboutDeleteTicket()
+                    {
+                        DeletedTicketId = it.TicketId,
+                        UserId = it.UserId,
+                        StatusTicketId = it.StatusTicketId,
+                        NumTicket = it.NumTicket
+                    };
+                    // добавляет в таблицу InfoAboutDeleteTickets
+                    context.InfoAboutDeleteTickets.Add(iadt);
+                    //добавляет в список информации о бронированных купленных билетах, которые были удалены
+                    context.Users.ElementAt(iadt.UserId).InfoAboutDeleteTickets.Add(iadt);  
+                }
+            }
 
-            //удалить билеты
+            //----- 2. Удаляем билеты -----
+            foreach (var t in context.Tickets.Where(n => n.Concert.Id == concert.Id))
+                context.Tickets.Remove(t);
 
-            //удалить информацию о концетре
+            //----- 3. Удаляем информацию о концетре -----
             context.InfoAboutTypeConcerts.Remove(context.InfoAboutTypeConcerts.ElementAt(concert.InfoATC.Id));
-            //удалить сам концерт
+            
+            //----- 4. Удаляем сам концерт -----
             context.Concerts.Remove(concert);
+            
             context.SaveChanges();
         }
 

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DataLayer.Entityes
 {
-    public class DeletedTicked
+    public class DeletedTicket
     {
         [Key]
         public int DelTicketId { get; set; }

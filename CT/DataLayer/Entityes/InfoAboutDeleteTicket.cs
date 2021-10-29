@@ -9,8 +9,8 @@ namespace DataLayer.Entityes
         public int UserId { get; set; }
         public User User { get; set; }
         public int DeletedTicketId { get; set; }
-        public DeletedTicked DeletedTicket { get; set; }
-        public int StatusTickedId { get; set; }
+        public DeletedTicket DeletedTicket { get; set; }
+        public int StatusTicketId { get; set; }
         public StatusTicket StatusTicket { get; set; }
         public int NumTicket { get; set; }
     }

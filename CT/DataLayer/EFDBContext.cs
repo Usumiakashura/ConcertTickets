@@ -21,7 +21,7 @@ namespace DataLayer
         public DbSet<InfoAboutTicket> InfoAboutTickets { get; set; }
         public DbSet<InfoAboutDeleteTicket> InfoAboutDeleteTickets { get; set; }
         public DbSet<StatusTicket> StatusTickets { get; set; }
-        public DbSet<DeletedTicked> DeletedTickeds { get; set; }
+        public DbSet<DeletedTicket> DeletedTickets { get; set; }
         public DbSet<User> Users { get; set; }
 
         public EFDBContext(DbContextOptions<EFDBContext> options)
@@ -32,8 +32,8 @@ namespace DataLayer
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<InfoAboutTicket>().HasKey(u => new { u.UserId, u.TicketId, u.StatusTickedId });
-            modelBuilder.Entity<InfoAboutDeleteTicket>().HasKey(u => new { u.UserId, u.DeletedTicketId, u.StatusTickedId });
+            modelBuilder.Entity<InfoAboutTicket>().HasKey(u => new { u.UserId, u.TicketId, u.StatusTicketId });
+            modelBuilder.Entity<InfoAboutDeleteTicket>().HasKey(u => new { u.UserId, u.DeletedTicketId, u.StatusTicketId });
         }
 
         

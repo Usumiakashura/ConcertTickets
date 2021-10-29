@@ -7,8 +7,8 @@ namespace BuissnesLayer.Interfaces
 {
     public interface IConcertTypesRepository
     {
-        IEnumerable<ConcertType> GetAllConcertTypes(bool includeConcert = false);
-        ConcertType GetConcertTypeById(int concertId, bool includeConcert = false);
+        IEnumerable<ConcertType> GetAllConcertTypes();
+        ConcertType GetConcertTypeById(int concertTypeId);
         void SaveConcertType(ConcertType concertType);
         void DeleteConcertType(ConcertType concertType);
     }

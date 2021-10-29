@@ -58,7 +58,7 @@ namespace DataLayer.Migrations
                     b.ToTable("ConcertTypes");
                 });
 
-            modelBuilder.Entity("DataLayer.Entityes.DeletedTicked", b =>
+            modelBuilder.Entity("DataLayer.Entityes.DeletedTicket", b =>
                 {
                     b.Property<int>("DelTicketId")
                         .ValueGeneratedOnAdd()
@@ -82,7 +82,7 @@ namespace DataLayer.Migrations
 
                     b.HasKey("DelTicketId");
 
-                    b.ToTable("DeletedTickeds");
+                    b.ToTable("DeletedTickets");
                 });
 
             modelBuilder.Entity("DataLayer.Entityes.InfoAboutDeleteTicket", b =>
@@ -93,16 +93,13 @@ namespace DataLayer.Migrations
                     b.Property<int>("DeletedTicketId")
                         .HasColumnType("int");
 
-                    b.Property<int>("StatusTickedId")
+                    b.Property<int>("StatusTicketId")
                         .HasColumnType("int");
 
                     b.Property<int>("NumTicket")
                         .HasColumnType("int");
 
-                    b.Property<int?>("StatusTicketId")
-                        .HasColumnType("int");
-
-                    b.HasKey("UserId", "DeletedTicketId", "StatusTickedId");
+                    b.HasKey("UserId", "DeletedTicketId", "StatusTicketId");
 
                     b.HasIndex("DeletedTicketId");
 
@@ -119,16 +116,13 @@ namespace DataLayer.Migrations
                     b.Property<int>("TicketId")
                         .HasColumnType("int");
 
-                    b.Property<int>("StatusTickedId")
+                    b.Property<int>("StatusTicketId")
                         .HasColumnType("int");
 
                     b.Property<int>("NumTicket")
                         .HasColumnType("int");
 
-                    b.Property<int?>("StatusTicketId")
-                        .HasColumnType("int");
-
-                    b.HasKey("UserId", "TicketId", "StatusTickedId");
+                    b.HasKey("UserId", "TicketId", "StatusTicketId");
 
                     b.HasIndex("StatusTicketId");
 
@@ -284,7 +278,7 @@ namespace DataLayer.Migrations
 
             modelBuilder.Entity("DataLayer.Entityes.InfoAboutDeleteTicket", b =>
                 {
-                    b.HasOne("DataLayer.Entityes.DeletedTicked", "DeletedTicket")
+                    b.HasOne("DataLayer.Entityes.DeletedTicket", "DeletedTicket")
                         .WithMany("InfoAboutDeleteTickets")
                         .HasForeignKey("DeletedTicketId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -292,7 +286,9 @@ namespace DataLayer.Migrations
 
                     b.HasOne("DataLayer.Entityes.StatusTicket", "StatusTicket")
                         .WithMany("InfoAboutDeleteTickets")
-                        .HasForeignKey("StatusTicketId");
+                        .HasForeignKey("StatusTicketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("DataLayer.Entityes.User", "User")
                         .WithMany("InfoAboutDeleteTickets")
@@ -311,7 +307,9 @@ namespace DataLayer.Migrations
                 {
                     b.HasOne("DataLayer.Entityes.StatusTicket", "StatusTicket")
                         .WithMany("InfoAboutTickets")
-                        .HasForeignKey("StatusTicketId");
+                        .HasForeignKey("StatusTicketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("DataLayer.Entityes.Ticket", "Ticket")
                         .WithMany("InfoAboutTickets")
@@ -379,7 +377,7 @@ namespace DataLayer.Migrations
                     b.Navigation("InfoAboutTypesConcerts");
                 });
 
-            modelBuilder.Entity("DataLayer.Entityes.DeletedTicked", b =>
+            modelBuilder.Entity("DataLayer.Entityes.DeletedTicket", b =>
                 {
                     b.Navigation("InfoAboutDeleteTickets");
                 });

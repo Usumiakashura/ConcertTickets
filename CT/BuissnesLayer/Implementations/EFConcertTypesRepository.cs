@@ -13,12 +13,12 @@ namespace BuissnesLayer.Implementations
             throw new NotImplementedException();
         }
 
-        public IEnumerable<ConcertType> GetAllConcertTypes(bool includeConcert = false)
+        public IEnumerable<ConcertType> GetAllConcertTypes()
         {
             throw new NotImplementedException();
         }
 
-        public ConcertType GetConcertTypeById(int concertId, bool includeConcert = false)
+        public ConcertType GetConcertTypeById(int concertTypeId)
         {
             throw new NotImplementedException();
         }
