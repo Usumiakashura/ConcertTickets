@@ -84,3 +84,5 @@ D:\ConcertTickets\CT\CT\obj\Debug\netcoreapp3.1\CT.pdb
 D:\ConcertTickets\CT\CT\obj\Debug\netcoreapp3.1\CT.genruntimeconfig.cache
 D:\ConcertTickets\CT\CT\bin\Debug\netcoreapp3.1\Humanizer.dll
 D:\ConcertTickets\CT\CT\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\ConcertTickets\CT\CT\bin\Debug\netcoreapp3.1\BuissnesLayer.dll
+D:\ConcertTickets\CT\CT\bin\Debug\netcoreapp3.1\BuissnesLayer.pdb

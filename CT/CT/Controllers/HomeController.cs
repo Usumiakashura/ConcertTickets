@@ -1,5 +1,8 @@
 ﻿using CT.Models;
+using DataLayer;
+using DataLayer.Entityes;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -11,16 +14,17 @@ namespace CT.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private EFDBContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(EFDBContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            List<Concert> _dirs = _context.Concerts.ToList();
+            return View(_dirs);
         }
 
         public IActionResult Privacy()

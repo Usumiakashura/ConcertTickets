@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<DataLayer.Entityes.Concert>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -43,25 +45,29 @@
     <div class="container">
         <div class="row">
             <h2 class="col-md-12">Концерты и мероприятия</h2>
-            @for (int i = 0; i < 12; i++)
+            @foreach (var item in Model)
             {
-                <div class="block col-lg-2 col-md-3 col-sm-6">
-                    <div class="concert-block">
-                        <div class="image-block">
-                            <img class="card-img-top" src="images/c1.png" /> @*тут менять ссылку на изображение*@
-                        </div>
-                        <div class="text-block ">
-                            <div class="cen">
-                                <a href="#" class="link-dark">Исполнитель</a>
+                @if (item != null)
+                {
+                    <div class="block col-lg-2 col-md-3 col-sm-6">
+                        <div class="concert-block">
+                            <div class="image-block">
+                                <img class="card-img-top" src="images/@item.Image" /> 
                             </div>
+                            <div class="text-block ">
+                                <div class="cen">
+                                    <a href="#" class="link-dark">@item.Singer</a>
+                                </div>
+                            </div>
+                            <button class="green-button">
+                                Подробнее
+                            </button>
                         </div>
-                        <button class="green-button">
-                            Подробнее
-                        </button>
                     </div>
-                </div>
-            }
+                }
 
+
+            }
 
         </div>
 

@@ -19,21 +19,6 @@ namespace DataLayer.Migrations
                 .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("DataLayer.Entityes.BuyTicket", b =>
-                {
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TicketId")
-                        .HasColumnType("int");
-
-                    b.HasKey("UserId", "TicketId");
-
-                    b.HasIndex("TicketId");
-
-                    b.ToTable("BuyTicket");
-                });
-
             modelBuilder.Entity("DataLayer.Entityes.Concert", b =>
                 {
                     b.Property<int>("Id")
@@ -73,6 +58,85 @@ namespace DataLayer.Migrations
                     b.ToTable("ConcertTypes");
                 });
 
+            modelBuilder.Entity("DataLayer.Entityes.DeletedTicked", b =>
+                {
+                    b.Property<int>("DelTicketId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("DateConcert")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Sector")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SingerDeletedConcert")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("DelTicketId");
+
+                    b.ToTable("DeletedTickeds");
+                });
+
+            modelBuilder.Entity("DataLayer.Entityes.InfoAboutDeleteTicket", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DeletedTicketId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StatusTickedId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumTicket")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("StatusTicketId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "DeletedTicketId", "StatusTickedId");
+
+                    b.HasIndex("DeletedTicketId");
+
+                    b.HasIndex("StatusTicketId");
+
+                    b.ToTable("InfoAboutDeleteTickets");
+                });
+
+            modelBuilder.Entity("DataLayer.Entityes.InfoAboutTicket", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TicketId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StatusTickedId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumTicket")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("StatusTicketId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "TicketId", "StatusTickedId");
+
+                    b.HasIndex("StatusTicketId");
+
+                    b.HasIndex("TicketId");
+
+                    b.ToTable("InfoAboutTickets");
+                });
+
             modelBuilder.Entity("DataLayer.Entityes.InfoAboutTypeConcert", b =>
                 {
                     b.Property<int>("Id")
@@ -97,19 +161,19 @@ namespace DataLayer.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("InfoAboutTypeConcert");
                 });
 
-            modelBuilder.Entity("DataLayer.Entityes.ReservedTicket", b =>
+            modelBuilder.Entity("DataLayer.Entityes.StatusTicket", b =>
                 {
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("TicketId")
-                        .HasColumnType("int");
+                    b.Property<string>("NameStatus")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("UserId", "TicketId");
+                    b.HasKey("Id");
 
-                    b.HasIndex("TicketId");
-
-                    b.ToTable("ReservedTicket");
+                    b.ToTable("StatusTickets");
                 });
 
             modelBuilder.Entity("DataLayer.Entityes.Ticket", b =>
@@ -135,7 +199,7 @@ namespace DataLayer.Migrations
 
                     b.HasIndex("ConcertId");
 
-                    b.ToTable("Ticket");
+                    b.ToTable("Tickets");
                 });
 
             modelBuilder.Entity("DataLayer.Entityes.User", b =>
@@ -159,7 +223,7 @@ namespace DataLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("DataLayer.Entityes.VoiceType", b =>
@@ -218,19 +282,50 @@ namespace DataLayer.Migrations
                     b.HasDiscriminator().HasValue("Party");
                 });
 
-            modelBuilder.Entity("DataLayer.Entityes.BuyTicket", b =>
+            modelBuilder.Entity("DataLayer.Entityes.InfoAboutDeleteTicket", b =>
                 {
+                    b.HasOne("DataLayer.Entityes.DeletedTicked", "DeletedTicket")
+                        .WithMany("InfoAboutDeleteTickets")
+                        .HasForeignKey("DeletedTicketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DataLayer.Entityes.StatusTicket", "StatusTicket")
+                        .WithMany("InfoAboutDeleteTickets")
+                        .HasForeignKey("StatusTicketId");
+
+                    b.HasOne("DataLayer.Entityes.User", "User")
+                        .WithMany("InfoAboutDeleteTickets")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DeletedTicket");
+
+                    b.Navigation("StatusTicket");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("DataLayer.Entityes.InfoAboutTicket", b =>
+                {
+                    b.HasOne("DataLayer.Entityes.StatusTicket", "StatusTicket")
+                        .WithMany("InfoAboutTickets")
+                        .HasForeignKey("StatusTicketId");
+
                     b.HasOne("DataLayer.Entityes.Ticket", "Ticket")
-                        .WithMany("BuyTickets")
+                        .WithMany("InfoAboutTickets")
                         .HasForeignKey("TicketId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DataLayer.Entityes.User", "User")
-                        .WithMany("BuyTickets")
+                        .WithMany("InfoAboutTickets")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("StatusTicket");
 
                     b.Navigation("Ticket");
 
@@ -252,25 +347,6 @@ namespace DataLayer.Migrations
                     b.Navigation("Concert");
 
                     b.Navigation("ConcertType");
-                });
-
-            modelBuilder.Entity("DataLayer.Entityes.ReservedTicket", b =>
-                {
-                    b.HasOne("DataLayer.Entityes.Ticket", "Ticket")
-                        .WithMany("ReservedTickets")
-                        .HasForeignKey("TicketId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DataLayer.Entityes.User", "User")
-                        .WithMany("ReservedTickets")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Ticket");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("DataLayer.Entityes.Ticket", b =>
@@ -303,18 +379,28 @@ namespace DataLayer.Migrations
                     b.Navigation("InfoAboutTypesConcerts");
                 });
 
+            modelBuilder.Entity("DataLayer.Entityes.DeletedTicked", b =>
+                {
+                    b.Navigation("InfoAboutDeleteTickets");
+                });
+
+            modelBuilder.Entity("DataLayer.Entityes.StatusTicket", b =>
+                {
+                    b.Navigation("InfoAboutDeleteTickets");
+
+                    b.Navigation("InfoAboutTickets");
+                });
+
             modelBuilder.Entity("DataLayer.Entityes.Ticket", b =>
                 {
-                    b.Navigation("BuyTickets");
-
-                    b.Navigation("ReservedTickets");
+                    b.Navigation("InfoAboutTickets");
                 });
 
             modelBuilder.Entity("DataLayer.Entityes.User", b =>
                 {
-                    b.Navigation("BuyTickets");
+                    b.Navigation("InfoAboutDeleteTickets");
 
-                    b.Navigation("ReservedTickets");
+                    b.Navigation("InfoAboutTickets");
                 });
 
             modelBuilder.Entity("DataLayer.Entityes.VoiceType", b =>

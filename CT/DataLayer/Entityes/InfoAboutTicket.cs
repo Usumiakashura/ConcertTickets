@@ -4,11 +4,14 @@ using System.Text;
 
 namespace DataLayer.Entityes
 {
-    public class BuyTicket
+    public class InfoAboutTicket
     {
         public int UserId { get; set; }
         public User User { get; set; }
         public int TicketId { get; set; }
         public Ticket Ticket { get; set; }
+        public int StatusTickedId { get; set; }
+        public StatusTicket StatusTicket { get; set; }
+        public int NumTicket { get; set; }
     }
 }

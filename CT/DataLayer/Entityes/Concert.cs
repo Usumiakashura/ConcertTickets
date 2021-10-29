@@ -11,7 +11,6 @@ namespace DataLayer.Entityes
         public DateTime? DateConcert { get; set; }
         public string Place { get; set; }
         public string Image { get; set; }
-        //public ConcertType ConcertType { get; set; }
 
         public InfoAboutTypeConcert InfoATC { get; set; }
         public List<Ticket> Tickets { get; set; }

@@ -1572,6 +1572,19 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "BuissnesLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "DataLayer": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuissnesLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuissnesLayer.dll": {}
+        }
+      },
       "DataLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -5874,6 +5887,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "BuissnesLayer/1.0.0": {
+      "type": "project",
+      "path": "../BuissnesLayer/BuissnesLayer.csproj",
+      "msbuildProject": "../BuissnesLayer/BuissnesLayer.csproj"
+    },
     "DataLayer/1.0.0": {
       "type": "project",
       "path": "../DataLayer/DataLayer.csproj",
@@ -5882,6 +5900,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "BuissnesLayer >= 1.0.0",
       "DataLayer >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.11"
     ]
@@ -5923,6 +5942,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "D:\\ConcertTickets\\CT\\BuissnesLayer\\BuissnesLayer.csproj": {
+              "projectPath": "D:\\ConcertTickets\\CT\\BuissnesLayer\\BuissnesLayer.csproj"
+            },
             "D:\\ConcertTickets\\CT\\DataLayer\\DataLayer.csproj": {
               "projectPath": "D:\\ConcertTickets\\CT\\DataLayer\\DataLayer.csproj"
             }

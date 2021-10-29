@@ -17,6 +17,12 @@ namespace DataLayer
         public DbSet<Concert> Concerts { get; set; }
         public DbSet<ConcertType> ConcertTypes { get; set; }
         public DbSet<InfoAboutTypeConcert> InfoAboutTypeConcerts { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<InfoAboutTicket> InfoAboutTickets { get; set; }
+        public DbSet<InfoAboutDeleteTicket> InfoAboutDeleteTickets { get; set; }
+        public DbSet<StatusTicket> StatusTickets { get; set; }
+        public DbSet<DeletedTicked> DeletedTickeds { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public EFDBContext(DbContextOptions<EFDBContext> options)
             : base(options)
@@ -26,8 +32,8 @@ namespace DataLayer
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ReservedTicket>().HasKey(u => new { u.UserId, u.TicketId });
-            modelBuilder.Entity<BuyTicket>().HasKey(u => new { u.UserId, u.TicketId });
+            modelBuilder.Entity<InfoAboutTicket>().HasKey(u => new { u.UserId, u.TicketId, u.StatusTickedId });
+            modelBuilder.Entity<InfoAboutDeleteTicket>().HasKey(u => new { u.UserId, u.DeletedTicketId, u.StatusTickedId });
         }
 
         

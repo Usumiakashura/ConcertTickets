@@ -14,7 +14,7 @@ namespace DataLayer.Entityes
         public DateTime? Birthday { get; set; }
         public string Photo { get; set; }
 
-        public List<BuyTicket> BuyTickets { get; set; }
-        public List<ReservedTicket> ReservedTickets { get; set; }
+        public List<InfoAboutTicket> InfoAboutTickets { get; set; }
+        public List<InfoAboutDeleteTicket> InfoAboutDeleteTickets { get; set; }
     }
 }

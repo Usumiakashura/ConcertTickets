@@ -29,24 +29,6 @@ namespace CT
 
         }
 
-        //public static IHost MigrateDbContext<TContext>(this IHost host) where TContext : DbContext
-        //{
-        //    // Create a scope to get scoped services.
-        //    using (var scope = host.Services.CreateScope())
-        //    {
-        //        var services = scope.ServiceProvider;
-        //        var logger = services.GetRequiredService<ILogger<TContext>>();
-        //        // get the service provider and db context.
-        //        var context = services.GetService<TContext>();
-
-        //        // do something you can customize.
-        //        // For example, I will migrate the database.
-        //        context.Database.Migrate();
-        //    }
-
-        //    return host;
-        //}
-
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>

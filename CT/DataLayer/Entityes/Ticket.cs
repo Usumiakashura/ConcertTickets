@@ -12,8 +12,7 @@ namespace DataLayer.Entityes
         public string Sector { get; set; }
 
         public Concert Concert { get; set; }
-        public List<BuyTicket> BuyTickets { get; set; }
-        public List<ReservedTicket> ReservedTickets { get; set; }
+        public List<InfoAboutTicket> InfoAboutTickets { get; set; }
 
 
     }
