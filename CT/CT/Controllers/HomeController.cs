@@ -7,6 +7,7 @@ using DataLayer.Entityes;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using PresentationLayer;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -17,15 +18,11 @@ namespace CT.Controllers
 {
     public class HomeController : Controller
     {
-        //private EFDBContext _context;
-        //private IConcertsRepository _concRep;
-        private DataManager _dataManager;
+        private ServicesManager _serviceManager;
 
-        public HomeController(/*EFDBContext context, EFConcertsRepository concRep, */DataManager dataManager)
+        public HomeController(ServicesManager serviceManager)
         {
-            //_context = context;
-            //_concRep = concRep;
-            _dataManager = dataManager;
+            _serviceManager = serviceManager;
         }
 
 
@@ -33,9 +30,9 @@ namespace CT.Controllers
         {
             //List<Concert> _dirs = _context.Concerts.ToList();
             //List<Concert> _dirs = _concRep.GetAllConcerts().ToList();
-            List<Concert> _dirs = _dataManager.Concerts.GetAllConcerts().ToList();
+            //List<Concert> _dirs = _dataManager.Concerts.GetAllConcerts().ToList();
 
-            return View(_dirs);
+            return View(_serviceManager);
         }
 
         public IActionResult Privacy()

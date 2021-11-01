@@ -1,31 +1,44 @@
 ﻿using BuissnesLayer.Interfaces;
+using DataLayer;
 using DataLayer.Entityes;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BuissnesLayer.Implementations
 {
-    class EFConcertTypesRepository : IConcertTypesRepository
+    public class EFConcertTypesRepository : IConcertTypesRepository
     {
-        public void DeleteConcertType(ConcertType concertType)
-        {
-            throw new NotImplementedException();
-        }
+        private EFDBContext _context;
 
+        public EFConcertTypesRepository(EFDBContext context)
+        {
+            _context = context;
+        }
+        
         public IEnumerable<ConcertType> GetAllConcertTypes()
         {
-            throw new NotImplementedException();
+            return _context.ConcertTypes;
         }
 
         public ConcertType GetConcertTypeById(int concertTypeId)
         {
-            throw new NotImplementedException();
+            return _context.ConcertTypes.ElementAtOrDefault(concertTypeId);
+        }
+
+        public void DeleteConcertType(ConcertType concertType)
+        {
+            _context.ConcertTypes.Remove(concertType);
         }
 
         public void SaveConcertType(ConcertType concertType)
         {
-            throw new NotImplementedException();
-        }
+            if (concertType.Id == 0)
+                _context.ConcertTypes.Add(concertType);
+            else
+                _context.Entry(concertType).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _context.SaveChanges();
+        }        
     }
 }

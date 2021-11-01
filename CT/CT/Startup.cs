@@ -32,6 +32,8 @@ namespace CT
             services.AddDbContext<EFDBContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("DataLayer")));
 
             services.AddTransient<IConcertsRepository, EFConcertsRepository>();
+            services.AddTransient<IConcertTypesRepository, EFConcertTypesRepository>();
+            services.AddTransient<ITicketsRepository, EFTicketRepository>();
 
             services.AddScoped<DataManager>();
             

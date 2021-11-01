@@ -9,15 +9,23 @@ namespace BuissnesLayer
     {
         private IConcertsRepository _concertsRepository;
         private IConcertTypesRepository _concertTypesRepository;
-        private IUserRepository _userRepository;
-        private IVoiceTypeRepository _voiceTypeRepository;
+        private ITicketsRepository _ticketsRepository;
+        //private IUserRepository _userRepository;
+        //private IVoiceTypeRepository _voiceTypeRepository;
 
         public DataManager(
-            IConcertsRepository concertsRepository)
+            IConcertsRepository concertsRepository,
+            IConcertTypesRepository concertTypesRepository,
+            ITicketsRepository ticketsRepository)
         {
             _concertsRepository = concertsRepository;
+            _concertTypesRepository = concertTypesRepository;
+            _ticketsRepository = ticketsRepository;
         }
 
         public IConcertsRepository Concerts { get { return _concertsRepository; } }
+        public IConcertTypesRepository ConcertTypess { get { return _concertTypesRepository; } }
+        public ITicketsRepository Tickets { get { return _ticketsRepository; } }
+
     }
 }

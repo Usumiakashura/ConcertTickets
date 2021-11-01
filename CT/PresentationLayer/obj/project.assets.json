@@ -1546,6 +1546,19 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "BuissnesLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "DataLayer": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BuissnesLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BuissnesLayer.dll": {}
+        }
+      },
       "DataLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -5816,6 +5829,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "BuissnesLayer/1.0.0": {
+      "type": "project",
+      "path": "../BuissnesLayer/BuissnesLayer.csproj",
+      "msbuildProject": "../BuissnesLayer/BuissnesLayer.csproj"
+    },
     "DataLayer/1.0.0": {
       "type": "project",
       "path": "../DataLayer/DataLayer.csproj",
@@ -5824,6 +5842,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "BuissnesLayer >= 1.0.0",
       "DataLayer >= 1.0.0"
     ]
   },
@@ -5836,11 +5855,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ConcertTickets\\CT\\BusinessLayer\\BusinessLayer.csproj",
-      "projectName": "BusinessLayer",
-      "projectPath": "D:\\ConcertTickets\\CT\\BusinessLayer\\BusinessLayer.csproj",
+      "projectUniqueName": "D:\\ConcertTickets\\CT\\PresentationLayer\\PresentationLayer.csproj",
+      "projectName": "PresentationLayer",
+      "projectPath": "D:\\ConcertTickets\\CT\\PresentationLayer\\PresentationLayer.csproj",
       "packagesPath": "C:\\Users\\aliak\\.nuget\\packages\\",
-      "outputPath": "D:\\ConcertTickets\\CT\\BusinessLayer\\obj\\",
+      "outputPath": "D:\\ConcertTickets\\CT\\PresentationLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -5864,6 +5883,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "D:\\ConcertTickets\\CT\\BuissnesLayer\\BuissnesLayer.csproj": {
+              "projectPath": "D:\\ConcertTickets\\CT\\BuissnesLayer\\BuissnesLayer.csproj"
+            },
             "D:\\ConcertTickets\\CT\\DataLayer\\DataLayer.csproj": {
               "projectPath": "D:\\ConcertTickets\\CT\\DataLayer\\DataLayer.csproj"
             }

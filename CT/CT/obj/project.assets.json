@@ -1598,6 +1598,20 @@
         "runtime": {
           "bin/placeholder/DataLayer.dll": {}
         }
+      },
+      "PresentationLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "BuissnesLayer": "1.0.0",
+          "DataLayer": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PresentationLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PresentationLayer.dll": {}
+        }
       }
     }
   },
@@ -5896,13 +5910,19 @@
       "type": "project",
       "path": "../DataLayer/DataLayer.csproj",
       "msbuildProject": "../DataLayer/DataLayer.csproj"
+    },
+    "PresentationLayer/1.0.0": {
+      "type": "project",
+      "path": "../PresentationLayer/PresentationLayer.csproj",
+      "msbuildProject": "../PresentationLayer/PresentationLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "BuissnesLayer >= 1.0.0",
       "DataLayer >= 1.0.0",
-      "Microsoft.EntityFrameworkCore.Design >= 5.0.11"
+      "Microsoft.EntityFrameworkCore.Design >= 5.0.11",
+      "PresentationLayer >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5947,6 +5967,9 @@
             },
             "D:\\ConcertTickets\\CT\\DataLayer\\DataLayer.csproj": {
               "projectPath": "D:\\ConcertTickets\\CT\\DataLayer\\DataLayer.csproj"
+            },
+            "D:\\ConcertTickets\\CT\\PresentationLayer\\PresentationLayer.csproj": {
+              "projectPath": "D:\\ConcertTickets\\CT\\PresentationLayer\\PresentationLayer.csproj"
             }
           }
         }
