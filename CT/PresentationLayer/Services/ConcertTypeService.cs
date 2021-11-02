@@ -19,20 +19,20 @@ namespace PresentationLayer.Services
         {
             var _dirs = _dataManager.ConcertTypess.GetAllConcertTypes();
             List<ConcertTypeViewModel> _modelList = new List<ConcertTypeViewModel>();
-            foreach (var item in _dirs)
+            if (_dirs != null)
             {
-                _modelList.Add(ConcertTypeDBToViewModelById(item.Id));
+                foreach (var item in _dirs)
+                {
+                    _modelList.Add(ConcertTypeDBToViewModel(item));
+                }
             }
             return _modelList;
         }
 
-        public ConcertTypeViewModel ConcertTypeDBToViewModelById(int concertTypeId)
+        public ConcertTypeViewModel ConcertTypeDBToViewModel(ConcertType concertType)
         {
-            var _concertType = _dataManager.ConcertTypess.GetConcertTypeById(concertTypeId);
-
-            return new ConcertTypeViewModel() { ConcertType = _concertType };
+            return new ConcertTypeViewModel() { ConcertType = concertType };
         }
-
 
 
 

@@ -18,22 +18,22 @@ namespace CT.Controllers
 {
     public class HomeController : Controller
     {
+        private DataManager _dataManager;
         private ServicesManager _serviceManager;
 
-        public HomeController(ServicesManager serviceManager)
+        public HomeController(DataManager dataManager)
         {
-            _serviceManager = serviceManager;
+            _dataManager = dataManager;
+            _serviceManager = new ServicesManager(_dataManager);
         }
 
 
         public IActionResult Index()
         {
-            //List<Concert> _dirs = _context.Concerts.ToList();
-            //List<Concert> _dirs = _concRep.GetAllConcerts().ToList();
-            //List<Concert> _dirs = _dataManager.Concerts.GetAllConcerts().ToList();
-
             return View(_serviceManager);
         }
+
+        
 
         public IActionResult Privacy()
         {

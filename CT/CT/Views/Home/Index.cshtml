@@ -1,12 +1,13 @@
 ﻿@model PresentationLayer.ServicesManager
 
+
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="s1">
     <div class="container">
-        <h2 class="h2-dark">Поиск концертов</h2>
+        <h2 class="h-dark">Поиск концертов</h2>
         <form id="email-form" name="email-form" data-name="Email Form" class="form marB">
             <div class="row">
 
@@ -18,7 +19,7 @@
 
                             @foreach (var item in Model.ConcertTypeServices.GetConcertTypesList())
                             {
-                                <option value=@item.ConcertType.Id>@item.ConcertType.NameType</option>
+                            <option value=@item.ConcertType.Id>@item.ConcertType.NameType</option>
                             }
                         </select>
                         <select class="select col-md-4" id="sort_concert" name="sort_concert">
@@ -55,19 +56,23 @@
                             <div class="image-block">
                                 <img class="card-img-top" src="images/@item.Concert.Image" />
                             </div>
-                            <div class="text-block ">
+                            <div class="text-block text-center">
                                 <div class="cen">
-                                    <a href="#" class="link-dark">@item.Concert.Singer</a>
+                                    <a class="link-dark"
+                                       href="@Url.Action("Index", "ConcertInfo", new { concertId = @item.Concert.Id })">
+                                        @item.Concert.Singer
+                                    </a>
                                 </div>
                             </div>
-                            <button class="green-button">
-                                Подробнее
-                            </button>
+                            <div class="text-center">
+                                <a class="green-button link-btn"
+                                   href="@Url.Action("Index", "ConcertInfo", new { concertId = @item.Concert.Id })">
+                                    Подробнее
+                                </a>
+                            </div>
                         </div>
                     </div>
                 }
-
-
             }
 
         </div>

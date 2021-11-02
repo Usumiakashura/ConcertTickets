@@ -44,6 +44,15 @@ footer {
         background-color: rgba(90, 180, 0, 0.7);
     }
 
+.link-btn {
+    color: white;
+}
+
+    .link-btn:hover {
+        color: white;
+        text-decoration: none;
+    }
+
 .select {
     color: #000;
     font-size: 14px;
@@ -60,7 +69,7 @@ footer {
     margin-bottom: 10px;
 }
 
-.h2-dark {
+.h-dark {
     color: white;
 }
 
@@ -69,6 +78,7 @@ footer {
     padding-top: 80px;
     padding-bottom: 20px;
 }
+
 
 .link-dark {
     color: white;
@@ -104,8 +114,7 @@ footer {
     height: 70px;
     width: 100%;
     display: flex;
-    justify-content: center; /*Центрирование по горизонтали*/
-    align-items: center; /*Центрирование по вертикали */
+    align-items: center; /*Центрирование по вертикали*/ 
 }
 
 .cen {

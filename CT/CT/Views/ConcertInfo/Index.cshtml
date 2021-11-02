@@ -1,0 +1,80 @@
+﻿@model PresentationLayer.Models.ConcertViewModel
+
+
+@{
+    ViewData["Title"] = @Model.Concert.Singer;
+}
+
+<div class=" s1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-4">
+                <img class="card-img-top" src="images/@Model.Concert.Image" />
+            </div>
+            <div class="col-md-8 col-sm-7">
+                <h5 class="h-dark">@Model.Concert.Singer</h5>
+                <p></p>
+                <p class="h-dark">Дата проведения: @Model.Concert.DateConcert</p>
+                <p class="h-dark">Место: @Model.Concert.Place</p>
+            </div>
+        </div>
+        
+
+        
+    </div>
+</div>
+
+
+<div class="s2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                @if (Model.InfoAboutTypeConcert is DataLayer.Entityes.ClassicMusic)
+                {
+                    <p>Тут будет инфа о классической музыке</p>
+                }
+                else
+                @if (Model.InfoAboutTypeConcert is DataLayer.Entityes.Party)
+                {
+                    <p>Тут будет инфа о пати-музыке</p>
+                }
+                else
+                @if (Model.InfoAboutTypeConcert is DataLayer.Entityes.OpenAir)
+                {
+                    <p>Тут будет инфа об Опэн-Эйр концерте</p>
+                }
+
+                <p>@Model.InfoAboutTypeConcert.Note</p>
+            </div>
+
+            <div  class="col-md-7">
+                <p>Билеты:</p>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Сектор</th>
+                            <th>Стоимость</th>
+                            <th>Доступно</th>
+                            <th>Кол-во</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Concert.Tickets)
+                        {
+                            <tr>
+                                <td>@item.Sector</td>
+                                <td>@item.Price p.</td>
+                                <td>@item.NumOfTickets</td>
+                                <td>1</td>
+                                <td><button class="green-button">В корзину</button></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+

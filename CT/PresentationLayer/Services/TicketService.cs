@@ -18,20 +18,22 @@ namespace PresentationLayer.Services
 
         public List<TicketViewModel> GetTicketsList(Concert concert)
         {
-            var _dirs = concert.Tickets;
+            var _dirs = _dataManager.Tickets.GetAllTicketsByIdConcert(concert.Id); //concert.Tickets;
             List<TicketViewModel> _modelList = new List<TicketViewModel>();
-            foreach (var item in _dirs)
+            if (_dirs != null)
             {
-                _modelList.Add(TicketDbToViewModel(item.TicketID));
+                foreach (var item in _dirs)
+                {
+                    _modelList.Add(TicketDbToViewModel(item));
+                }
             }
-
             return _modelList;
         }
 
-        public TicketViewModel TicketDbToViewModel(int ticketId)
+        public TicketViewModel TicketDbToViewModel(Ticket ticket)
         {
-            var _ticket = _dataManager.Tickets.GetTicketById(ticketId);
-            return new TicketViewModel() { Ticket = _ticket };
+            //var _ticket = _dataManager.Tickets.GetTicketById(ticketId);
+            return new TicketViewModel() { Ticket = ticket };
         }
 
 

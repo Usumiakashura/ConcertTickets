@@ -24,7 +24,7 @@ namespace BuissnesLayer.Implementations
 
         public Concert GetConcertById(int concertId)
         {
-            return _context.Concerts.ElementAtOrDefault(concertId);
+            return _context.Concerts.Find(concertId);
         }
         
         public void DeleteConcert(Concert concert)

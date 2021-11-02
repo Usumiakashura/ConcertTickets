@@ -34,6 +34,7 @@ namespace CT
             services.AddTransient<IConcertsRepository, EFConcertsRepository>();
             services.AddTransient<IConcertTypesRepository, EFConcertTypesRepository>();
             services.AddTransient<ITicketsRepository, EFTicketRepository>();
+            services.AddTransient<IInfoAboutTypeConcert, EFInfoAboutTypeConcert>();
 
             services.AddScoped<DataManager>();
             
