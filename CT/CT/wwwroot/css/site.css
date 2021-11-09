@@ -69,8 +69,8 @@ footer {
     margin-bottom: 10px;
 }
 
-.h-dark {
-    color: white;
+input {
+    width: 100%;
 }
 
 .s1 {

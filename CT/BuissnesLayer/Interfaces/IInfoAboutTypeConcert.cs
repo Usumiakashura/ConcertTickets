@@ -7,7 +7,7 @@ namespace BuissnesLayer.Interfaces
 {
     public interface IInfoAboutTypeConcert
     {
-        InfoAboutTypeConcert GetInfoAboutTypeConcertByIdConcert(int concertId);
+        InfoAboutTypeConcert GetInfoAboutTypeConcertById(int concertId);
         void SaveConcertType(InfoAboutTypeConcert infoATC);
     }
 }

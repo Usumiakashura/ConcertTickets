@@ -7,8 +7,8 @@
 
 <div class="s1">
     <div class="container">
-        <h2 class="h-dark">Поиск концертов</h2>
-        <form id="email-form" name="email-form" data-name="Email Form" class="form marB">
+        <h5 class="text-white">Поиск концертов</h5>
+        <form>
             <div class="row">
 
                 <div class="col-md-10 marT">
@@ -19,7 +19,7 @@
 
                             @foreach (var item in Model.ConcertTypeServices.GetConcertTypesList())
                             {
-                            <option value=@item.ConcertType.Id>@item.ConcertType.NameType</option>
+                                <option value=@item.ConcertType.Id>@item.ConcertType.NameType</option>
                             }
                         </select>
                         <select class="select col-md-4" id="sort_concert" name="sort_concert">
@@ -46,27 +46,30 @@
 <div class="s2">
     <div class="container">
         <div class="row">
-            <h2 class="col-md-12">Концерты и мероприятия</h2>
+            <h5 class="col-md-12">Концерты и мероприятия</h5>
             @foreach (var item in Model.ConcertServices.GetConcertsList())
             {
                 @if (item != null)
                 {
                     <div class="block col-lg-2 col-md-3 col-sm-6">
-                        <div class="concert-block">
+                        <div class="concert-block shadow">
                             <div class="image-block">
-                                <img class="card-img-top" src="images/@item.Concert.Image" />
+                                <a asp-action="Index" asp-controller="ConcertInfo" asp-route-concertId="@item.Id">
+                                    <img class="card-img-top" src="images/@item.Image" />
+                                </a>
+                                
                             </div>
                             <div class="text-block text-center">
                                 <div class="cen">
                                     <a class="link-dark"
-                                       href="@Url.Action("Index", "ConcertInfo", new { concertId = @item.Concert.Id })">
-                                        @item.Concert.Singer
+                                       asp-action="Index" asp-controller="ConcertInfo" asp-route-concertId="@item.Id">
+                                        @item.Singer
                                     </a>
                                 </div>
                             </div>
                             <div class="text-center">
                                 <a class="green-button link-btn"
-                                   href="@Url.Action("Index", "ConcertInfo", new { concertId = @item.Concert.Id })">
+                                   asp-action="Index" asp-controller="ConcertInfo" asp-route-concertId="@item.Id">
                                     Подробнее
                                 </a>
                             </div>

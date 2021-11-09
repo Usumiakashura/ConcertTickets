@@ -60,15 +60,17 @@ namespace DataLayer
                 {
                     new Concert()
                     {
+                        //Id = 1,
                         Singer = "Какой-то крутой чел",
                         DateConcert = new DateTime(2022, 02, 21),
                         Place = "Кафе \"Маргаритка\"",
                         Image = "imgC001.jpeg",
                         InfoATC = new Party()
                         {
+                            Id = 1,
                             Age = 18,
                             Note = "Дресс-код: красно-желтые цвета одежды.",
-                            ConcertTypeId = context.ConcertTypes.Find(1).Id
+                            ConcertType = context.ConcertTypes.Find(1)
                         },
                         Tickets = new List<Ticket>()
                         {
@@ -83,16 +85,18 @@ namespace DataLayer
                     },
                     new Concert()
                     {
+                        //Id = 2,
                         Singer = "БИ-2",
                         DateConcert = new DateTime(2021, 11, 26),
                         Place = "Аэродром \"Боровая\"",
                         Image = "imgC002.jpeg",
                         InfoATC = new OpenAir()
                         {
+                            Id = 2,
                             Headliner = "\"Чёрное солнце\"",
                             HowToGetThere = "Боровая",
                             Note = "На месте будет развернут фудкорт",
-                            ConcertTypeId = context.ConcertTypes.Find(2).Id
+                            ConcertType = context.ConcertTypes.Find(2)
                         },
                         Tickets = new List<Ticket>()
                         {
@@ -118,17 +122,19 @@ namespace DataLayer
                     },
                     new Concert()
                     {
+                        //Id = 3,
                         Singer = "Бетховен",
                         DateConcert = new DateTime(2021, 11, 19),
                         Place = "КЗ \"Минск\"",
                         Image = "imgC003.jpeg",
                         InfoATC = new ClassicMusic()
                         {
+                            Id = 3,
                             NameConcert = "Лунная соната",
                             Composer = "Бетховен",
                             Note = "Какая-то заметка",
-                            ConcertTypeId = context.ConcertTypes.Find(3).Id,
-                            VoiceTypeId = context.VoiceTypes.Find(3).Id
+                            ConcertType = context.ConcertTypes.Find(3),
+                            VoiceType = context.VoiceTypes.Find(3)
                         },
                         Tickets = new List<Ticket>()
                         {
@@ -148,15 +154,17 @@ namespace DataLayer
                     },
                     new Concert()
                     {
+                        //Id = 4,
                         Singer = "MACAN",
                         DateConcert = new DateTime(2021, 11, 21),
                         Place = "Prime Hall / Прайм Холл, Минск",
                         Image = "imgC005.jpeg",
                         InfoATC = new Party()
                         {
+                            Id = 4,
                             Age = 18,
                             Note = "Молодая звезда русского хип-хопа MACAN выступит 21 ноября на сцене Prime Hall!",
-                            ConcertTypeId = context.ConcertTypes.Find(1).Id
+                            ConcertType = context.ConcertTypes.Find(1)
                         },
                         Tickets = new List<Ticket>()
                         {
@@ -171,16 +179,18 @@ namespace DataLayer
                     },
                     new Concert()
                     {
+                        //Id = 5,
                         Singer = "РОК ФЕСТ",
                         DateConcert = new DateTime(2021, 11, 13),
                         Place = "Дворец спорта, Минск",
                         Image = "imgC004.jpeg",
                         InfoATC = new OpenAir()
                         {
+                            Id = 5,
                             Headliner = "«Агата Кристи»",
                             HowToGetThere = "м. Немига",
                             Note = "Весной 2018 Вадим Самойлов анонсировал новую концертную программу, посвященную тридцатилетию легендарной группы.",
-                            ConcertTypeId = context.ConcertTypes.Find(2).Id
+                            ConcertType = context.ConcertTypes.Find(2)
                         },
                         Tickets = new List<Ticket>()
                         {
@@ -206,17 +216,19 @@ namespace DataLayer
                     },
                     new Concert()
                     {
+                        //Id = 6,
                         Singer = "Дж.Герцевич",
                         DateConcert = new DateTime(2021, 11, 23),
                         Place = "Брестский академический театр драмы, Брест",
                         Image = "imgC006.jpeg",
                         InfoATC = new ClassicMusic()
                         {
+                            Id = 6,
                             NameConcert = "\"В СТИЛЕ БЛЮЗ\" 6+",
                             Composer = "Александр Сосноввский",
                             Note = "Какая-то заметка",
-                            ConcertTypeId = context.ConcertTypes.Find(3).Id,
-                            VoiceTypeId = context.VoiceTypes.Find(2).Id
+                            ConcertType = context.ConcertTypes.Find(3),
+                            VoiceType = context.VoiceTypes.Find(2)
                         },
                         Tickets = new List<Ticket>()
                         {
@@ -236,15 +248,17 @@ namespace DataLayer
                     },
                     new Concert()
                     {
+                        //Id = 7,
                         Singer = "Ramil'",
                         DateConcert = new DateTime(2021, 11, 05),
                         Place = "Prime Hall / Прайм Холл, Минск",
                         Image = "imgC007.jpeg",
                         InfoATC = new Party()
                         {
+                            Id = 7,
                             Age = 16,
                             Note = "Музыка Ramil’ — это смелый и резкий поп, представляющий новейшую волну поп-музыки, которая зарождается не в дорогих студиях и радиостанциях, а в «сторис» инстаграма и аудиозаписях Вконтакте.",
-                            ConcertTypeId = context.ConcertTypes.Find(1).Id
+                            ConcertType = context.ConcertTypes.Find(1)
                         },
                         Tickets = new List<Ticket>()
                         {
@@ -271,16 +285,18 @@ namespace DataLayer
                     },
                     new Concert()
                     {
+                        //Id = 8,
                         Singer = "Dabro",
                         DateConcert = new DateTime(2021, 11, 20),
                         Place = "клуб RE:PUBLIC, Минск",
                         Image = "imgC008.jpeg",
                         InfoATC = new OpenAir()
                         {
+                            Id = 8,
                             Headliner = "Хиты Юность, Поцелуй, Я по частицам",
                             HowToGetThere = "ОАО \"МПОВТ\"",
                             Note = "Какая-нибудь большая заметка",
-                            ConcertTypeId = context.ConcertTypes.Find(2).Id
+                            ConcertType = context.ConcertTypes.Find(2)
                         },
                         Tickets = new List<Ticket>()
                         {
@@ -300,17 +316,19 @@ namespace DataLayer
                     },
                     new Concert()
                     {
+                        //Id = 9,
                         Singer = "Государственный академический симфонический оркестр Республики Беларусь",
                         DateConcert = new DateTime(2021, 11, 11),
                         Place = "Брестский академический театр драмы, Брест",
                         Image = "imgC009.jpeg",
                         InfoATC = new ClassicMusic()
                         {
+                            Id = 9,
                             NameConcert = "Цикл концертов \"Классика для всех\"",
                             Composer = "Александр Анисимов",
                             Note = "Какая-то заметка",
-                            ConcertTypeId = context.ConcertTypes.Find(3).Id,
-                            VoiceTypeId = context.VoiceTypes.Find(2).Id
+                            ConcertType = context.ConcertTypes.Find(3),
+                            VoiceType = context.VoiceTypes.Find(2)
                         },
                         Tickets = new List<Ticket>()
                         {
@@ -330,16 +348,18 @@ namespace DataLayer
                     },
                     new Concert()
                     {
+                        //Id = 10,
                         Singer = "Pain (метал / Швеция)",
                         DateConcert = new DateTime(2022, 02, 21),
                         Place = "Аэродром \"Боровая\"",
                         Image = "imgC010.jpeg",
                         InfoATC = new OpenAir()
                         {
+                            Id = 10,
                             Headliner = "\"Shut Your Mouth\"",
                             HowToGetThere = "Боровая",
                             Note = "PAIN – группа Петера Тагтгрена – мультиинструменталиста, продюсера и композитора, известного своими работами в Lindemann, Hypocrisy. ",
-                            ConcertTypeId = context.ConcertTypes.Find(2).Id
+                            ConcertType = context.ConcertTypes.Find(2)
                         },
                         Tickets = new List<Ticket>()
                         {
@@ -365,17 +385,19 @@ namespace DataLayer
                     },
                     new Concert()
                     {
+                        //Id = 11,
                         Singer = "Государственная академическая хоровая капелла им. Г. Ширмы",
                         DateConcert = new DateTime(2021, 10, 31),
                         Place = "Белгосфилармония, Минск",
                         Image = "imgC011.jpeg",
                         InfoATC = new ClassicMusic()
                         {
+                            Id = 11,
                             NameConcert = "Голоса мира",
                             Composer = "Вольга Янум",
                             Note = "Какая-то заметка",
-                            ConcertTypeId = context.ConcertTypes.Find(3).Id,
-                            VoiceTypeId = context.VoiceTypes.Find(1).Id
+                            ConcertType = context.ConcertTypes.Find(3),
+                            VoiceType = context.VoiceTypes.Find(1)
                         },
                         Tickets = new List<Ticket>()
                         {

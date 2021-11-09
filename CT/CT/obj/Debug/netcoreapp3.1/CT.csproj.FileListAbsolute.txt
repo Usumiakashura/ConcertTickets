@@ -89,3 +89,4 @@ D:\ConcertTickets\CT\CT\bin\Debug\netcoreapp3.1\BuissnesLayer.pdb
 D:\ConcertTickets\CT\CT\bin\Debug\netcoreapp3.1\PresentationLayer.dll
 D:\ConcertTickets\CT\CT\bin\Debug\netcoreapp3.1\PresentationLayer.pdb
 D:\ConcertTickets\CT\CT\obj\Debug\netcoreapp3.1\Razor\Views\ConcertInfo\Index.cshtml.g.cs
+D:\ConcertTickets\CT\CT\obj\Debug\netcoreapp3.1\Razor\Views\ConcertInfo\EditInfoAboutConcert.cshtml.g.cs

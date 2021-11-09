@@ -1,26 +1,31 @@
 ﻿@model PresentationLayer.Models.ConcertViewModel
-
+@using DataLayer.Entityes;
 
 @{
-    ViewData["Title"] = @Model.Concert.Singer;
+    ViewData["Title"] = @Model.Singer;
 }
 
 <div class=" s1">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-4">
-                <img class="card-img-top" src="images/@Model.Concert.Image" />
+                <img class="card-img-top" src="images/@Model.Image" />
             </div>
             <div class="col-md-8 col-sm-7">
-                <h5 class="h-dark">@Model.Concert.Singer</h5>
-                <p></p>
-                <p class="h-dark">Дата проведения: @Model.Concert.DateConcert</p>
-                <p class="h-dark">Место: @Model.Concert.Place</p>
+                <h5 class="text-white">@Model.Singer</h5>
+                <br />
+                <p class="text-white">Дата проведения: @Model.DateConcert.Value.ToShortDateString() @Model.DateConcert.Value.ToShortTimeString()</p>
+                <p class="text-white">Место: @Model.Place</p>
+                <br />
+                <a class="link-dark"
+                   asp-action="EditInfoAboutConcert" asp-controller="ConcertInfo" asp-route-concertId="@Model.Id">
+                    Редактировать
+                </a>
             </div>
         </div>
-        
 
-        
+
+
     </div>
 </div>
 
@@ -29,45 +34,54 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                @if (Model.InfoAboutTypeConcert is DataLayer.Entityes.ClassicMusic)
+                @if (Model.InfoAboutTypeConcert is ClassicMusic)
                 {
-                    <p>Тут будет инфа о классической музыке</p>
+                    var _modelCM = (ClassicMusic)Model.InfoAboutTypeConcert;
+
+                    <p>Название концерта: @_modelCM.NameConcert</p>
+                    <p>Композитор: @_modelCM.Composer</p>
+                    <p>Тип голоса: @_modelCM.VoiceType.NameVoiceType</p>
                 }
                 else
-                @if (Model.InfoAboutTypeConcert is DataLayer.Entityes.Party)
+                @if (Model.InfoAboutTypeConcert is Party)
                 {
-                    <p>Тут будет инфа о пати-музыке</p>
+                    var _modelPM = (Party)Model.InfoAboutTypeConcert;
+
+                    <p>Возрастной ценз: @_modelPM.Age</p>
                 }
                 else
-                @if (Model.InfoAboutTypeConcert is DataLayer.Entityes.OpenAir)
+                @if (Model.InfoAboutTypeConcert is OpenAir)
                 {
-                    <p>Тут будет инфа об Опэн-Эйр концерте</p>
+                    var _modelOA = (OpenAir)Model.InfoAboutTypeConcert;
+
+                    <p>Хэдлайнер: @_modelOA.Headliner</p>
+                    <p>Как добраться: @_modelOA.HowToGetThere</p>
                 }
 
                 <p>@Model.InfoAboutTypeConcert.Note</p>
             </div>
 
-            <div  class="col-md-7">
-                <p>Билеты:</p>
+            <div class="col-md-7">
+                <p><b>Билеты:</b></p>
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Сектор</th>
-                            <th>Стоимость</th>
-                            <th>Доступно</th>
-                            <th>Кол-во</th>
+                            <th><p>Сектор</p></th>
+                            <th><p>Стоимость</p></th>
+                            <th><p>Доступно</p></th>
+                            <th><p>Кол-во</p></th>
                             <th> </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model.Concert.Tickets)
+                        @foreach (var item in Model.Tickets)
                         {
                             <tr>
-                                <td>@item.Sector</td>
-                                <td>@item.Price p.</td>
-                                <td>@item.NumOfTickets</td>
-                                <td>1</td>
-                                <td><button class="green-button">В корзину</button></td>
+                                <td><p>@item.Ticket.Sector</p></td>
+                                <td><p>@item.Ticket.Price p.</p></td>
+                                <td><p>@item.Ticket.NumOfTickets</p></td>
+                                <td><p>1</p></td>
+                                <td><p><button class="green-button">Купить</button></p></td>
                             </tr>
                         }
                     </tbody>

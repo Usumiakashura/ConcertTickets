@@ -11,20 +11,32 @@ namespace BuissnesLayer.Implementations
     public class EFConcertsRepository : IConcertsRepository
     {
         private EFDBContext _context;
+        private EFTicketRepository _eFTicketRepository;
 
         public EFConcertsRepository(EFDBContext context)
         {
             _context = context;
+            _eFTicketRepository = new EFTicketRepository(_context);
         }
 
         public IEnumerable<Concert> GetAllConcerts()
         {
+            List<Concert> listConcerts = new List<Concert>();
+            foreach (Concert c in _context.Concerts)
+            {
+                c.InfoATC = _context.InfoAboutTypeConcerts.Find(c.Id);
+                c.Tickets = _eFTicketRepository.GetAllTicketsByIdConcert(c.Id).ToList();
+                listConcerts.Add(c);
+            }
+            
             return _context.Concerts;
         }
 
         public Concert GetConcertById(int concertId)
         {
-            return _context.Concerts.Find(concertId);
+            Concert c = _context.Concerts.Find(concertId);
+            c.InfoATC = _context.InfoAboutTypeConcerts.Find(c.Id);
+            return c;
         }
         
         public void DeleteConcert(Concert concert)
