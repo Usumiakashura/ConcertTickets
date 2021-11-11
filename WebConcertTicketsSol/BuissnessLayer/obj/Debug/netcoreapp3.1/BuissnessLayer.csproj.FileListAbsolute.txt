@@ -1,0 +1,15 @@
+D:\ConcertTickets\WebConcertTicketsSol\BuissnessLayer\bin\Debug\netcoreapp3.1\BuissnessLayer.deps.json
+D:\ConcertTickets\WebConcertTicketsSol\BuissnessLayer\bin\Debug\netcoreapp3.1\BuissnessLayer.runtimeconfig.json
+D:\ConcertTickets\WebConcertTicketsSol\BuissnessLayer\bin\Debug\netcoreapp3.1\BuissnessLayer.runtimeconfig.dev.json
+D:\ConcertTickets\WebConcertTicketsSol\BuissnessLayer\bin\Debug\netcoreapp3.1\BuissnessLayer.dll
+D:\ConcertTickets\WebConcertTicketsSol\BuissnessLayer\bin\Debug\netcoreapp3.1\BuissnessLayer.pdb
+D:\ConcertTickets\WebConcertTicketsSol\BuissnessLayer\bin\Debug\netcoreapp3.1\DataLayer.dll
+D:\ConcertTickets\WebConcertTicketsSol\BuissnessLayer\bin\Debug\netcoreapp3.1\DataLayer.pdb
+D:\ConcertTickets\WebConcertTicketsSol\BuissnessLayer\obj\Debug\netcoreapp3.1\BuissnessLayer.csproj.AssemblyReference.cache
+D:\ConcertTickets\WebConcertTicketsSol\BuissnessLayer\obj\Debug\netcoreapp3.1\BuissnessLayer.AssemblyInfoInputs.cache
+D:\ConcertTickets\WebConcertTicketsSol\BuissnessLayer\obj\Debug\netcoreapp3.1\BuissnessLayer.AssemblyInfo.cs
+D:\ConcertTickets\WebConcertTicketsSol\BuissnessLayer\obj\Debug\netcoreapp3.1\BuissnessLayer.csproj.CoreCompileInputs.cache
+D:\ConcertTickets\WebConcertTicketsSol\BuissnessLayer\obj\Debug\netcoreapp3.1\BuissnessLayer.csproj.CopyComplete
+D:\ConcertTickets\WebConcertTicketsSol\BuissnessLayer\obj\Debug\netcoreapp3.1\BuissnessLayer.dll
+D:\ConcertTickets\WebConcertTicketsSol\BuissnessLayer\obj\Debug\netcoreapp3.1\BuissnessLayer.pdb
+D:\ConcertTickets\WebConcertTicketsSol\BuissnessLayer\obj\Debug\netcoreapp3.1\BuissnessLayer.genruntimeconfig.cache

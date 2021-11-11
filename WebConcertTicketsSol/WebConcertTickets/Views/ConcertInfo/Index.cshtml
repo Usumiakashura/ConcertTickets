@@ -1,0 +1,92 @@
+﻿@model Concert
+
+@{
+    ViewData["Title"] = @Model.Singer;
+}
+
+<div class=" s1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-4">
+                <img class="card-img-top" src="images/@Model.Image" />
+            </div>
+            <div class="col-md-8 col-sm-7">
+                <h5 class="text-white">@Model.Singer</h5>
+                <br />
+                @*<p class="text-white">Дата проведения: @Model.DateConcert.Value.ToShortDateString() @Model.DateConcert.Value.ToShortTimeString()</p>*@
+                <p class="text-white">Место: @Model.Place</p>
+                <br />
+                <a class="link-dark"
+                   asp-action="EditInfoAboutConcert" asp-controller="ConcertInfo" asp-route-concert="@Model">
+                    Редактировать
+                </a>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+@*<div class="s2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                @if (Model.InfoATC is ClassicMusic)
+                {
+                    var _modelCM = (ClassicMusic)Model.InfoATC;
+
+                    <p>Название концерта: @_modelCM.NameConcert</p>
+                    <p>Композитор: @_modelCM.Composer</p>
+                    <p>Тип голоса: @_modelCM.VoiceType.NameVoiceType</p>
+                }
+                else
+                @if (Model.InfoATC is Party)
+                {
+                    var _modelPM = (Party)Model.InfoATC;
+
+                    <p>Возрастной ценз: @_modelPM.Age</p>
+                }
+                else
+                @if (Model.InfoATC is OpenAir)
+                {
+                    var _modelOA = (OpenAir)Model.InfoATC;
+
+                    <p>Хэдлайнер: @_modelOA.Headliner</p>
+                    <p>Как добраться: @_modelOA.HowToGetThere</p>
+                }
+
+                <p>@Model.InfoATC.Note</p>
+            </div>
+
+            <div class="col-md-7">
+                <p><b>Билеты:</b></p>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th><p>Сектор</p></th>
+                            <th><p>Стоимость</p></th>
+                            <th><p>Доступно</p></th>
+                            <th><p>Кол-во</p></th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Tickets)
+                        {
+                            <tr>
+                                <td><p>@item.Sector</p></td>
+                                <td><p>@item.NumOfTickets</p></td>
+                                <td><p>1</p></td>
+                                <td><p><button class="green-button">Купить</button></p></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>*@
+
