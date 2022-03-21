@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "04oHX4m2xQds09kKy/iZcJQK5ilG2IQHVdsLPjE5vG+Y5j/VvLWy9dxuNbnqt8hmgg1SMTtltlV/Gudf5oeIPQ==",
+  "dgSpecHash": "tHXs0UCW0+LEJpwM+L0hNPXBFs/Au0pFS4X+ULysioDRO0/uZjPWTrwHidCQnnegH1SPCi8ABQrgmF9xlJy2ag==",
   "success": true,
-  "projectFilePath": "D:\\ConcertTickets\\WebConcertTicketsSol\\BuissnessLayer\\BuissnessLayer.csproj",
+  "projectFilePath": "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\BuissnessLayer\\BuissnessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aliak\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.15\\microsoft.aspnetcore.cryptography.internal.3.1.15.nupkg.sha512",
     "C:\\Users\\aliak\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.15\\microsoft.aspnetcore.cryptography.keyderivation.3.1.15.nupkg.sha512",

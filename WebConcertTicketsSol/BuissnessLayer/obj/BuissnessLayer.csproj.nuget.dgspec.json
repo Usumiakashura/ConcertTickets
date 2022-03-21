@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ConcertTickets\\WebConcertTicketsSol\\BuissnessLayer\\BuissnessLayer.csproj": {}
+    "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\BuissnessLayer\\BuissnessLayer.csproj": {}
   },
   "projects": {
-    "D:\\ConcertTickets\\WebConcertTicketsSol\\BuissnessLayer\\BuissnessLayer.csproj": {
+    "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\BuissnessLayer\\BuissnessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ConcertTickets\\WebConcertTicketsSol\\BuissnessLayer\\BuissnessLayer.csproj",
+        "projectUniqueName": "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\BuissnessLayer\\BuissnessLayer.csproj",
         "projectName": "BuissnessLayer",
-        "projectPath": "D:\\ConcertTickets\\WebConcertTicketsSol\\BuissnessLayer\\BuissnessLayer.csproj",
+        "projectPath": "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\BuissnessLayer\\BuissnessLayer.csproj",
         "packagesPath": "C:\\Users\\aliak\\.nuget\\packages\\",
-        "outputPath": "D:\\ConcertTickets\\WebConcertTicketsSol\\BuissnessLayer\\obj\\",
+        "outputPath": "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\BuissnessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -35,8 +35,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\ConcertTickets\\WebConcertTicketsSol\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "D:\\ConcertTickets\\WebConcertTicketsSol\\DataLayer\\DataLayer.csproj"
+              "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\DataLayer\\DataLayer.csproj"
               }
             }
           }
@@ -77,14 +77,14 @@
         }
       }
     },
-    "D:\\ConcertTickets\\WebConcertTicketsSol\\DataLayer\\DataLayer.csproj": {
+    "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\DataLayer\\DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ConcertTickets\\WebConcertTicketsSol\\DataLayer\\DataLayer.csproj",
+        "projectUniqueName": "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\DataLayer\\DataLayer.csproj",
         "projectName": "DataLayer",
-        "projectPath": "D:\\ConcertTickets\\WebConcertTicketsSol\\DataLayer\\DataLayer.csproj",
+        "projectPath": "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\DataLayer\\DataLayer.csproj",
         "packagesPath": "C:\\Users\\aliak\\.nuget\\packages\\",
-        "outputPath": "D:\\ConcertTickets\\WebConcertTicketsSol\\DataLayer\\obj\\",
+        "outputPath": "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

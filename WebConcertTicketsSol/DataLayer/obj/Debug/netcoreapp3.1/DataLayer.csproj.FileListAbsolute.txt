@@ -10,3 +10,15 @@ D:\ConcertTickets\WebConcertTicketsSol\DataLayer\obj\Debug\netcoreapp3.1\DataLay
 D:\ConcertTickets\WebConcertTicketsSol\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.dll
 D:\ConcertTickets\WebConcertTicketsSol\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.pdb
 D:\ConcertTickets\WebConcertTicketsSol\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.genruntimeconfig.cache
+E:\Projects\C#\ConcertTickets\ConcertTickets\WebConcertTicketsSol\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.deps.json
+E:\Projects\C#\ConcertTickets\ConcertTickets\WebConcertTicketsSol\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.runtimeconfig.json
+E:\Projects\C#\ConcertTickets\ConcertTickets\WebConcertTicketsSol\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.runtimeconfig.dev.json
+E:\Projects\C#\ConcertTickets\ConcertTickets\WebConcertTicketsSol\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.dll
+E:\Projects\C#\ConcertTickets\ConcertTickets\WebConcertTicketsSol\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.pdb
+E:\Projects\C#\ConcertTickets\ConcertTickets\WebConcertTicketsSol\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csproj.AssemblyReference.cache
+E:\Projects\C#\ConcertTickets\ConcertTickets\WebConcertTicketsSol\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.AssemblyInfoInputs.cache
+E:\Projects\C#\ConcertTickets\ConcertTickets\WebConcertTicketsSol\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.AssemblyInfo.cs
+E:\Projects\C#\ConcertTickets\ConcertTickets\WebConcertTicketsSol\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csproj.CoreCompileInputs.cache
+E:\Projects\C#\ConcertTickets\ConcertTickets\WebConcertTicketsSol\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.dll
+E:\Projects\C#\ConcertTickets\ConcertTickets\WebConcertTicketsSol\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.pdb
+E:\Projects\C#\ConcertTickets\ConcertTickets\WebConcertTicketsSol\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.genruntimeconfig.cache

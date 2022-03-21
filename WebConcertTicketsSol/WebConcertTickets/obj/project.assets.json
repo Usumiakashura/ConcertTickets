@@ -8800,11 +8800,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ConcertTickets\\WebConcertTicketsSol\\WebConcertTickets\\WebConcertTickets.csproj",
+      "projectUniqueName": "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\WebConcertTickets\\WebConcertTickets.csproj",
       "projectName": "WebConcertTickets",
-      "projectPath": "D:\\ConcertTickets\\WebConcertTicketsSol\\WebConcertTickets\\WebConcertTickets.csproj",
+      "projectPath": "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\WebConcertTickets\\WebConcertTickets.csproj",
       "packagesPath": "C:\\Users\\aliak\\.nuget\\packages\\",
-      "outputPath": "D:\\ConcertTickets\\WebConcertTicketsSol\\WebConcertTickets\\obj\\",
+      "outputPath": "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\WebConcertTickets\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -8828,11 +8828,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\ConcertTickets\\WebConcertTicketsSol\\BuissnessLayer\\BuissnessLayer.csproj": {
-              "projectPath": "D:\\ConcertTickets\\WebConcertTicketsSol\\BuissnessLayer\\BuissnessLayer.csproj"
+            "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\BuissnessLayer\\BuissnessLayer.csproj": {
+              "projectPath": "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\BuissnessLayer\\BuissnessLayer.csproj"
             },
-            "D:\\ConcertTickets\\WebConcertTicketsSol\\DataLayer\\DataLayer.csproj": {
-              "projectPath": "D:\\ConcertTickets\\WebConcertTicketsSol\\DataLayer\\DataLayer.csproj"
+            "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\DataLayer\\DataLayer.csproj": {
+              "projectPath": "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\DataLayer\\DataLayer.csproj"
             }
           }
         }

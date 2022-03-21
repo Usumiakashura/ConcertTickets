@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gWaSNQlObQUf3cJ8gmcCVAanTAh1F3frD5AZDo25ldnnKC0DndrZreBJ3coLJT6tn+BonpQ09pvCAFldfuTkuA==",
+  "dgSpecHash": "i1TEAIB7huTv5SKQEQcTFXaoscpX7VuT4oku+z8Lh9upytL47X5Ga38wsFzJOJ5+GiSAWdosBACCjNTA/fnkug==",
   "success": true,
-  "projectFilePath": "D:\\ConcertTickets\\WebConcertTicketsSol\\WebConcertTickets\\WebConcertTickets.csproj",
+  "projectFilePath": "E:\\Projects\\C#\\ConcertTickets\\ConcertTickets\\WebConcertTicketsSol\\WebConcertTickets\\WebConcertTickets.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aliak\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.21\\microsoft.aspnetcore.cryptography.internal.3.1.21.nupkg.sha512",
     "C:\\Users\\aliak\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.21\\microsoft.aspnetcore.cryptography.keyderivation.3.1.21.nupkg.sha512",

@@ -6,8 +6,8 @@ namespace DataLayer.Entityes
 {
     public class InfoAboutTicket
     {
-        public int UserId { get; set; }
-        public User User { get; set; }
+        public string UserId { get; set; }
+        public ApplicationUser User { get; set; }
         public int TicketId { get; set; }
         public Ticket Ticket { get; set; }
         public int StatusTicketId { get; set; }
