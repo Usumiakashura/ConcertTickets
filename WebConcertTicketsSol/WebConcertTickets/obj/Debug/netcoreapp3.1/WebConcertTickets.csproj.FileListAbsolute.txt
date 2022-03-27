@@ -354,3 +354,6 @@ E:\Projects\C#\ConcertTickets\ConcertTickets\WebConcertTicketsSol\WebConcertTick
 E:\Projects\C#\ConcertTickets\ConcertTickets\WebConcertTicketsSol\WebConcertTickets\obj\Debug\netcoreapp3.1\WebConcertTickets.dll
 E:\Projects\C#\ConcertTickets\ConcertTickets\WebConcertTicketsSol\WebConcertTickets\obj\Debug\netcoreapp3.1\WebConcertTickets.pdb
 E:\Projects\C#\ConcertTickets\ConcertTickets\WebConcertTicketsSol\WebConcertTickets\obj\Debug\netcoreapp3.1\WebConcertTickets.genruntimeconfig.cache
+E:\Projects\C#\ConcertTickets\ConcertTickets\WebConcertTicketsSol\WebConcertTickets\obj\Debug\netcoreapp3.1\Razor\Views\Setting\SettingPage.cshtml.g.cs
+E:\Projects\C#\ConcertTickets\ConcertTickets\WebConcertTicketsSol\WebConcertTickets\obj\Debug\netcoreapp3.1\Razor\Views\Setting\Edit.cshtml.g.cs
+E:\Projects\C#\ConcertTickets\ConcertTickets\WebConcertTicketsSol\WebConcertTickets\bin\Debug\netcoreapp3.1\libman.json

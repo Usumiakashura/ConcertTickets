@@ -28,7 +28,7 @@ namespace DataLayer
         public DbSet<InfoAboutDeleteTicket> InfoAboutDeleteTickets { get; set; }
         public DbSet<StatusTicket> StatusTickets { get; set; }
         public DbSet<DeletedTicket> DeletedTickets { get; set; }
-        public DbSet<User> UsersAll { get; set; }
+        public DbSet<ApplicationUser> UsersAll { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

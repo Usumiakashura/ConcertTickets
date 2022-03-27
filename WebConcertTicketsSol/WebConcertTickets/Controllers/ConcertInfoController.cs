@@ -11,7 +11,7 @@ namespace WebConcertTickets.Controllers
     public class ConcertInfoController : Controller
     {
         private DataManager _dataManager;
-        Concert _concert;
+        //Concert _concert;
 
         public ConcertInfoController(DataManager dataManager)
         {
@@ -19,17 +19,17 @@ namespace WebConcertTickets.Controllers
         }
 
         // страница просмотра основной информации о концерте
-        public IActionResult Index(Concert concert)
+        public IActionResult Index(int concertId)
         {
-            _concert = concert;
-            return View(_concert);
+            //_concert = concert;
+            return View(_dataManager.Concerts.GetConcertById(concertId));
         }
 
         //страница редактирования концерта
         public IActionResult EditInfoAboutConcert(Concert concert)
         {
-            _concert = concert;
-            return View(_concert);
+            //_concert = concert;
+            return View();
         }
 
         [HttpPost]

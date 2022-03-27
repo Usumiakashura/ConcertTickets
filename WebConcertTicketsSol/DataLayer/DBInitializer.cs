@@ -16,7 +16,7 @@ namespace DataLayer
             List<VoiceType> CVoiceTypes;
             List<Concert> CConcerts;
 
-            if (!context.ConcertTypes.Any() && !context.VoiceTypes.Any() && !context.Concerts.Any())
+            if (!context.ConcertTypes.Any() && !context.VoiceTypes.Any())
             {
                 CConcertTypes = new List<ConcertType>()
                 {

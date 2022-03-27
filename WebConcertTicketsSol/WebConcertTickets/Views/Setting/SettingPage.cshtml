@@ -1,0 +1,71 @@
+﻿@model List<Concert>
+
+<div class="s1">
+    <div class="container">
+        <p class="mt-2">
+            <a asp-action="Create" class="btn btn-outline-info">
+                <span class="fa fa-plus-circle">Добавить концерт</span>
+            </a>
+        </p>
+    </div>
+</div>
+
+<div class="s2">
+    <div class="container">
+        <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model[0].Singer)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].DateConcert)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].Place)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].InfoATC.ConcertType)
+                </th>
+                
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <img src="~/Images/@item.Image" alt="NoImage" width="50" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Singer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateConcert)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Place)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InfoATC.ConcertType.NameType)
+                    </td>
+                   
+                    <td style="width: 120px">
+                        <a asp-action="Edit" asp-route-concertId="@item.Id"
+                           class="btn btn-outline-info">
+                            <span class="fas fa-edit"></span>
+                        </a>
+                        <a asp-action="Delete" asp-route-concertId="@item.Id"
+                           class="btn btn-outline-danger">
+                            <span class="fas fa-trash-alt"></span>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
+</div>

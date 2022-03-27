@@ -47,7 +47,7 @@
                     <div class="block col-lg-2 col-md-3 col-sm-6">
                         <div class="concert-block shadow">
                             <div class="image-block">
-                                <a asp-action="Index" asp-controller="ConcertInfo" asp-route-concert="@item">
+                                <a asp-action="Index" asp-controller="ConcertInfo" asp-route-concertId="@item.Id">
                                     <img class="card-img-top" src="images/@item.Image" />
                                 </a>
 
@@ -55,14 +55,14 @@
                             <div class="text-block text-center">
                                 <div class="cen">
                                     <a class="link-dark"
-                                       asp-action="Index" asp-controller="ConcertInfo" asp-route-concert="@item">
+                                       asp-action="Index" asp-controller="ConcertInfo" asp-route-concertId="@item.Id">
                                         @item.Singer
                                     </a>
                                 </div>
                             </div>
                             <div class="text-center">
                                 <a class="green-button link-btn"
-                                   asp-action="Index" asp-controller="ConcertInfo" asp-route-concert="@item">
+                                   asp-action="Index" asp-controller="ConcertInfo" asp-route-concertId="@item.Id">
                                     Подробнее
                                 </a>
                             </div>

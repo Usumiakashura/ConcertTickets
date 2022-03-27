@@ -1,6 +1,7 @@
 ﻿using BuissnesLayer.Interfaces;
 using DataLayer;
 using DataLayer.Entityes;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,27 +23,31 @@ namespace BuissnesLayer.Implementations
         public IEnumerable<Concert> GetAllConcerts()
         {
             List<Concert> listConcerts = new List<Concert>();
-            foreach (Concert c in _context.Concerts)
+            foreach (Concert c in _context.Concerts.Include(x => x.Tickets).Include(x => x.InfoATC).ThenInclude(x => x.ConcertType))
             {
-                c.InfoATC = _context.InfoAboutTypeConcerts.Find(c.Id);
-                c.Tickets = _eFTicketRepository.GetAllTicketsByIdConcert(c.Id).ToList();
+                if (c.InfoATC is ClassicMusic)
+                    ((ClassicMusic)c.InfoATC).VoiceType = _context.VoiceTypes.Include(x => x.ClassicMusics)
+                        .Where(x => x.Id == ((ClassicMusic)c.InfoATC).VoiceTypeId).First();
                 listConcerts.Add(c);
             }
-            
-            return _context.Concerts;
+            return listConcerts;
         }
 
         public Concert GetConcertById(int concertId)
         {
-            Concert c = _context.Concerts.Find(concertId);
-            c.InfoATC = _context.InfoAboutTypeConcerts.Find(c.Id);
+            Concert c = _context.Concerts.Include(x => x.Tickets)
+                .Include(x => x.InfoATC)
+                .ThenInclude(x => x.ConcertType)
+                .Where(x => x.Id == concertId).First();
+            if (c.InfoATC is ClassicMusic)
+                ((ClassicMusic)c.InfoATC).VoiceType = _context.VoiceTypes.Include(x => x.ClassicMusics)
+                    .Where(x => x.Id == ((ClassicMusic)c.InfoATC).VoiceTypeId).First();
             return c;
         }
         
         public void DeleteConcert(Concert concert)
         {
-            EFTicketRepository eFTicketRepository = new EFTicketRepository(_context);
-            eFTicketRepository.DeleteAllTickets(concert);
+            _eFTicketRepository.DeleteAllTickets(concert);
 
             //----- 3. Удаляем информацию о концетре -----
             _context.InfoAboutTypeConcerts.Remove(_context.InfoAboutTypeConcerts.ElementAt(concert.InfoATC.Id));
@@ -58,7 +63,7 @@ namespace BuissnesLayer.Implementations
             if (concert.Id == 0)
                 _context.Concerts.Add(concert);
             else
-                _context.Entry(concert).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                _context.Entry(concert).State = EntityState.Modified;
             _context.SaveChanges();
         }
     }

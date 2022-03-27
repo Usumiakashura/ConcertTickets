@@ -5,17 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - WebConcertTickets</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-toggleable-sm navbar-dark">
+       
+
+        <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
                 <a class="navbar-brand" asp-controller="Home" asp-action="Index">ConcertTickets</a>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    @*@await Component.InvokeAsync("Menu")*@
+                <div class="navbar-nav">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-link text-light" asp-controller="Home" asp-action="Index">Главная</a>
+                        </li>
+
+                        @if (User.IsInRole("admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-link text-light" asp-controller="Setting" asp-action="SettingPage">Администрирование</a>
+                            </li> 
+                        }
+                        
+
+                    </ul>
+
                 </div>
+                <partial name="_UserPartial" />
             </div>
         </nav>
     </header>

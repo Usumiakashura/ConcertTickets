@@ -67,7 +67,7 @@ namespace BuissnesLayer.Implementations
                 // добавляет в таблицу InfoAboutDeleteTickets
                 _context.InfoAboutDeleteTickets.Add(iadt);
                 //добавляет в список информации о бронированных купленных билетах, которые были удалены
-                _context.Users.ElementAt(iadt.UserId).InfoAboutDeleteTickets.Add(iadt);
+                _context.Users.Where(x => x.Id == iadt.UserId).First().InfoAboutDeleteTickets.Add(iadt);
             }
         }
 

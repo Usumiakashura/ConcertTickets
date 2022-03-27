@@ -7,9 +7,9 @@ namespace BuissnesLayer.Interfaces
 {
     public interface IUserRepository
     {
-        IEnumerable<User> GetAllUsers();
-        User GetUserById(int userId);
-        void SaveUser(User user);
-        void DeleteUser(User user);
+        IEnumerable<ApplicationUser> GetAllUsers();
+        ApplicationUser GetUserById(int userId);
+        void SaveUser(ApplicationUser user);
+        void DeleteUser(ApplicationUser user);
     }
 }
